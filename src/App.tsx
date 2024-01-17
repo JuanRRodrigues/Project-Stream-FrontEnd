@@ -1,10 +1,18 @@
 import React from 'react';
+import {Routes, Route, BrowserRouter} from 'react-router-dom';
+import Home from './pages/home/home';
+import Adm from './pages/home/adm';
 
+ 
 function App() {
   return (
-    <div className="App">
-      hello word
-    </div>
+    <BrowserRouter> 
+       <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/adm" element={<Adm />} />
+      </Routes>
+    </BrowserRouter>
+   
   );
 }
 
