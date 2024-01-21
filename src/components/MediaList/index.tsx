@@ -19,7 +19,11 @@ const MediaList: React.FC = () => {
   }, []);
 
   return (
+    
+
+    
     <Swiper
+    
       slidesPerView={6}
       onSlideChange={() => console.log('slide change')}
     >
@@ -29,7 +33,9 @@ const MediaList: React.FC = () => {
           <p className="title">{mediaData.title}</p>
           <p className="description">{mediaData.description}</p>
         </SwiperSlide>
+        
       ))}
+      
     </Swiper>
   );
 }
