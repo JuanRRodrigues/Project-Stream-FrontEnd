@@ -1,0 +1,206 @@
+
+.mediaAdm {
+    position: relative;
+    height: 320px;
+    flex-shrink: 0;
+    align-items: center;
+    padding-left: 5%;
+    margin-top: 2%;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 2%;
+    row-gap: 10%;
+
+}
+
+.mediaAdm .mediaBase{
+    width: 201px;
+    height: 302px;
+    align-items: center;
+    justify-content: center;
+}
+
+.mediaAdm img {
+
+    width: 201px;
+    height: 302px;
+    flex-shrink: 0;
+    border: 2px solid #FFF;
+}
+
+.mediaAdm .btn {
+    position: absolute;
+    flex-shrink: 0;
+    transform: translateY(-1010%);
+    padding-left: 0.3%;
+    display: flex;
+    width: 82px;
+    height: 24px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    opacity: 0;
+    
+    gap: 20%;
+
+    color: #000;
+
+}
+
+.mediaAdm .btn a {
+    text-align: center;
+    font-family: Koulen;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.8px;
+}
+
+.mediaAdm .btnGreen {
+    border: 1px solid #FFF;
+    background-color: green;
+    color: black;
+
+}
+
+.mediaAdm .btnRed {
+    border: 1px solid #FFF;
+    background-color: rgb(255, 0, 0);
+    color: black;
+
+}
+
+.mediaAdm .btnBlue {
+    border: 1px solid #FFF;
+    background-color: rgba(19, 146, 217, 1);
+    color: black;
+
+}
+
+.mediaAdm .btnGreen:hover {
+    border: 1px solid #FFF;
+    background-color: rgb(11, 175, 11);
+    color: rgb(255, 255, 255);
+
+}
+
+.mediaAdm .btnRed:hover {
+    border: 1px solid #FFF;
+    background-color: rgb(248, 54, 54);
+    color: rgb(255, 255, 255);
+
+}
+
+.mediaAdm .btnBlue:hover {
+    background-color: rgb(36, 174, 253);
+    color: rgb(255, 255, 255);
+
+}
+
+.mediaBase:hover img {
+    filter: brightness(15%);
+
+}
+
+.mediaAdm p {
+   
+    transform: translateY(-1250%);
+    text-align: center;
+    font-family: Koulen;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 380;
+    line-height: normal;
+    letter-spacing: 1.8px;
+    opacity: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Número máximo de linhas que você deseja mostrar */
+    -webkit-box-orient: vertical;
+    white-space: normal; /* Permite quebras de linha */
+
+}
+
+.mediaBase:hover p {
+    opacity: 1;
+}
+
+.mediaBase:hover .btn {
+    opacity: 1;
+}
+
+.mediaAdm h1 {
+    text-align: center;
+    font-family: Koulen;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 380;
+    line-height: normal;
+    letter-spacing: 1.8px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Número máximo de linhas que você deseja mostrar */
+    -webkit-box-orient: vertical;
+    white-space: normal; /* Permite quebras de linha */
+}
+
+
+.editMedia__Form {
+    position: fixed;
+    border: 3px solid #FFECEC;
+    background: #000228;
+    left: 40%;
+    top: 9%;
+    width: 396px;
+    height: 845px;
+    align-items: center;
+    z-index: 1000s;
+
+}
+
+.editMedia__Form .text {
+    position: relative;
+    top: 5%;
+    left: 13.2%;
+    display: flex;
+    width: 300px;
+    height: 51px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+
+    color: #000;
+    text-align: center;
+    font-family: Koulen;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    border-radius: 18px;
+    border: 2px solid #FFF;
+
+    background: #007690;
+}
+
+.editMedia__Form .formEditAPI{
+    position: relative;
+    align-items: center;
+
+    top: 8%;
+    left: 28.5%;
+}
+
+.editMedia__Form .formEditAPI input::placeholder{
+    width: 246px;
+    height: 34px;
+    flex-shrink: 0;
+    background: #FFF;
+}
+
+.reactModalPortal{
+    border: #000;
+}
+

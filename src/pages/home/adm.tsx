@@ -1,16 +1,18 @@
-import NavBar from '../../components/Header';
-import MediaList from '../../components/MediaList';
-import MainRecomendation from '../../components/MainRecomendation';
-import InfoList from '../../components/infoListMovies';
-import SerieList from '../../components/SerieList'
-import MediaInfo from '../../components/MediaInfo';
-
+import MediaInfo from "../../components/MediaInfo"
+import Teste from "../../components/teste/teste"
+import NavBar from "../../components/Header"
+import MainAdmin from "../../components/mainAdmin"
+import V2ListMedias from "../../components/v2ListMedias"
+import InfoListSeries from "../../components/infoListSeries"
 const Adm = () => {
 
         return (
           <div className="app">
             <NavBar />
-            <MediaInfo/>
+            <MainAdmin />
+            <MediaInfo />
+            <InfoListSeries />
+            <V2ListMedias />
           </div> )
 
 

@@ -1,20 +1,36 @@
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.scss';
-import Modal from "react-modal"
+import Modal from 'react-modal';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
+import { MediaData } from "../../interface/MediaData";
 
-Modal.setAppElement("#root")
+Modal.setAppElement('#root');
 
 const MediaInfo: React.FC = () => {
 
-  const [title, setTitle] = useState('')
-  const [type, setType] = useState('')
+
+
+  const [nameTitle, setTitle] = useState('');
+  const [nameCategory, setCategory] = useState('');
+
+
+
+
 
   const aoSubmeterForm = (evento: React.FormEvent<HTMLFormElement>) => {
-    evento.preventDefault()
-    axios.post('http://localhost:8000/')
-  }
+    evento.preventDefault();
+    axios.post('http://localhost:8080/api/v1/series/post', {
+        title: nameTitle,
+        category: nameCategory
+    })
+        .then(() => {
+            alert("Restaurante cadastrado com sucesso")
+        })
 
+    console.log('preciso enviar dados para api');
+    // Adicione aqui a lógica para enviar dados para a API
+  }
 
   const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -26,7 +42,6 @@ const MediaInfo: React.FC = () => {
     setIsOpen(false);
   }
 
-
   return (
     <div className="data__Series">
       <ul>
@@ -37,7 +52,9 @@ const MediaInfo: React.FC = () => {
         <li>TOTAL: 82</li>
         <li>EPISODES: 100</li>
         <li>SEASONS: 15</li>
-        <a onClick={openModal} className="openBtn">New Media</a>
+        <a onClick={openModal} className="openBtn">
+          New Media
+        </a>
       </ul>
       <Modal
         isOpen={modalIsOpen}
@@ -52,23 +69,33 @@ const MediaInfo: React.FC = () => {
           </div>
           <form onSubmit={aoSubmeterForm} className="formAddAPI" action="#">
             <h3>Name</h3>
-            <input value={title} type="text" id="placeholder" name="name" onChange={(evento) => setTitle(evento.target.value)}
-              placeholder="Name Media" />
+            <input
+              value={nameTitle}
+              type="text"
+              id="placeholder"
+              name="name"
+              onChange={evento => setTitle(evento.target.value)}
+              placeholder="Name Media"
+            />
             <h3>Type</h3>
-            <select id="type" name="type">
-              <option value="Movie">Movie</option>
-              <option value="Serie">Serie</option>
-              <option value="Anime">Anime</option>
-            </select>
+            <input
+              value={nameCategory}
+              type="text"
+              id="categoty"
+              name="type"
+              onChange={evento => setCategory(evento.target.value)}
+              placeholder="Category Media"
+            />
 
             <input type="submit" value="Confirm" />
-            <a onClick={closeModal} className="closeBtn">Cancel</a>
+            <a onClick={closeModal} className="closeBtn">
+              Cancel
+            </a>
           </form>
         </div>
-
       </Modal>
     </div>
   );
+};
 
-}
 export default MediaInfo;
