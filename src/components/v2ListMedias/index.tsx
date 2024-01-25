@@ -90,6 +90,17 @@ const V2ListMedias: React.FC = () => {
       });
   }, []);
 
+  const excluir = (mediaExcluida: MediaData) => {
+    axios.delete(`http://localhost:8080/api/v1/series/${mediaExcluida.id}`)
+      .then(() => {
+        const listaMedias = data.filter(medias => medias.id !== mediaExcluida.id);
+        setData([...listaMedias]);
+      })
+      .catch(error => {
+        console.error('Erro ao excluir:', error);
+      });
+  };
+
   const openModal = (media: MediaData) => {
     setSelectedMedia(media);
     setTitle(media.title || '');
@@ -155,8 +166,8 @@ const V2ListMedias: React.FC = () => {
             <a onClick={() => openModal(mediaData)} className="btnGreen">
               EDIT
             </a>
-            <a className="btnBlue" href="/movies/form">VIEW</a>
-            <a className="btnRed" href="/movies/form">DELETE</a>
+            <a className="btnBlue" href="#">VIEW</a>
+            <a className="btnRed" onClick={() => excluir(mediaData)}>DELETE</a>
           </div>
         </div>
       ))}
